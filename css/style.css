@@ -25,13 +25,14 @@
     padding: 6px 8px 12px;
     border-bottom: 2px solid #cbc4b3;
     text-align: center;
+    color: #FFF8E7;
 }
 
 #text {
     overflow:auto;
     padding: 16px 20px 16px 18px;
     font-size: 10pt;
-    color: #efedea;
+    color: #FFF8E7;
     z-index: 2;
     /* doesn't work in IE, unfortunately*/
 /*    height: auto;
@@ -204,12 +205,18 @@
 }
 
 .map-legend .legend-scale ul li:last-child {
+    border-bottom-width: 2px;
+    margin-bottom: 8px;
+}
+
+.map-legend .legend-scale ul:last-child li:last-child {
     border-bottom: 0;
+    margin-bottom: 2px;
 }
 
 .map-legend .legend-scale img {
     vertical-align: middle;
-    padding: 1px;
+    padding: 2px;
 }
 
 

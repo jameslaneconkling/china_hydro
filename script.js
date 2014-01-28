@@ -1,8 +1,8 @@
 var map = L.mapbox.map('map', 'chinaenvforum.map-cvdwgvbn', {
     minZoom: 4,
-    maxZoom: 8
-    //maxBounds: [[22,49.5],    //[[min-y, min-x],
-    //           [46.5,83.5]],   //[max-y, max-x]],
+    maxZoom: 8,
+    maxBounds: [[10,60],    //[[min-y, min-x],
+              [46.5,130]]   //[max-y, max-x]],
     //zoomControl: false,
     //attributionControl: false
 })
@@ -56,6 +56,7 @@ var chineseLayers = {
     dams_grid: L.mapbox.gridLayer('chinaenvforum.china_watershed_dams')
 };
 chineseLayers.dams_gridControl = L.mapbox.gridControl(chineseLayers.dams_grid);
+
 
 
 map.addLayer(englishLayers.dams);
