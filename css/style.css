@@ -180,12 +180,12 @@
 .map-legends {
     border: 0;
     background-color: rgba(36,36,36,0.9);
+    width: 200px !important;
 }
 
 .map-legend {
     font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #FFF8E7;
-    width: 180px;
 }
 
 
@@ -202,11 +202,12 @@
     list-style: none;
     margin-left: 0;
     border-bottom: 1px solid #555;
+    height: 30px;
 }
 
 .map-legend .legend-scale ul li:last-child {
     border-bottom-width: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .map-legend .legend-scale ul:last-child li:last-child {
@@ -215,31 +216,53 @@
 }
 
 .map-legend .legend-scale img {
-    vertical-align: middle;
+    height: 28px;
+    width: 28px;
     padding: 2px;
 }
 
+.map-legend .legend-scale img.mini {
+    height: 20px;
+}
+
+.map-legend .legend-scale img.icon-fill {
+    padding: 0;
+    border: 1px solid #777;
+    margin: 0 2px;
+    height: 26px;
+    width: 26px;
+}
+
+.map-legend .shadow {
+    position: absolute;
+    top: -9px;
+    bottom: -5px;
+    left: -10px;
+    right: -10px;
+    background-color: rgba(48, 48, 48, 0.7);
+    border-radius: 0 0 3px 3px;
+}
 
 /******************************* Zoom Widget *******************************/
 .leaflet-top {
     left: 412px;
 }
 
-/*.leaflet-top {
-    top: 76px;
-}*/
+.leaflet-top .leaflet-control {
+  box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+}
 
 /******************************* Language Widget *******************************/
 .widget-ui {
     position: absolute;
-    /*top: 8px;*/
-    /*left: 460px;*/
-    right: 8px;
+    left: 460px;
+    /*right: 8px;*/
     margin-left: 10px;
     margin-top: 10px;
     background-color: white;
     border: 1px solid #999;
     border-radius: 3px;
+    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
 }
 
 .widget-ui a {
@@ -260,15 +283,19 @@
     border-right: 1px solid #DDD;
 }
 
-.widget-ui a:hover,
 .widget-ui a:hover {
     background-color: white;
     color: #404040;
 }
 
-.widget-ui a:active,
 .widget-ui a:active {
     color: orange;
+}
+
+.widget-ui a.active {
+    background-color: #F0F0F0;
+    color: orange;
+    /*box-shadow: inset 0px 2px 3px rgba(0,0,0,0.15);*/
 }
 
 .widget-ui a:first-child {

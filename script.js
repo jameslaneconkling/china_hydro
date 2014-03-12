@@ -1,3 +1,5 @@
+var currentLanguage = 'en';
+
 var map = L.mapbox.map('map', 'chinaenvforum.map-cvdwgvbn', {
     minZoom: 4,
     maxZoom: 8,
@@ -10,63 +12,30 @@ var map = L.mapbox.map('map', 'chinaenvforum.map-cvdwgvbn', {
 
 map.addControl(L.mapbox.shareControl());
 
-// Custom position zoom widget
-//map.zoomControl.setPosition('topright');
 
-
-// Add layer tiles and utf-grids
-
-// mapTileLayers = {
-//     dams_en: L.mapbox.tileLayer('chinaenvforum.china_watershed_dams', {zIndex: 999} ),
-//     dams_cn: L.mapbox.tileLayer('chinaenvforum.china_watershed_dams', {zIndex: 999} ),
-//     dams_minor: L.mapbox.tileLayer('chinaenvforum.china_watershed_dams_minor', {zIndex: 998} ),
-//     labels_en: L.mapbox.tileLayer('chinaenvforum.watershed_labels', {zIndex: 997} ),
-//     labels_cn: L.mapbox.tileLayer('chinaenvforum.watershed_labels_cn', {zIndex: 997} )
-// };
-
-// mapGridLayers ={
-//     dams_en: L.mapbox.gridLayer('chinaenvforum.china_watershed_dams'),
-//     dams_cn: L.mapbox.gridLayer('chinaenvforum.china_watershed_dams')
-// };
-
-// mapGridControls = {
-//     dams_en: L.mapbox.gridControl(mapGridLayers.dams_en),
-//     dams_cn: L.mapbox.gridControl(mapGridLayers.dams_cn)
-// };
-
-// map.addLayer(mapTileLayers.dams_en);
-// map.addLayer(mapTileLayers.dams_minor);
-// map.addLayer(mapTileLayers.labels_en);
-
-// map.addLayer(mapGridLayers.dams_en);
-// map.addControl(mapGridControls.dams_en);
-
-var currentLanguage = 'en';
-
+// build english and chinese tile layers, grid layers, and grid controls
 var englishLayers = {
-    dams: L.mapbox.tileLayer('chinaenvforum.china_watershed_dams', {zIndex: 999} ),
     labels: L.mapbox.tileLayer('chinaenvforum.watershed_labels', {zIndex: 997} ),
-    dams_grid: L.mapbox.gridLayer('chinaenvforum.china_watershed_dams')
+    dams_grid: L.mapbox.gridLayer('chinaenvforum.china_watershed_dams_en')
 };
-englishLayers.dams_gridControl = L.mapbox.gridControl(englishLayers.dams_grid);
 
 var chineseLayers = {
-    dams: L.mapbox.tileLayer('chinaenvforum.china_watershed_dams', {zIndex: 999} ),
     labels: L.mapbox.tileLayer('chinaenvforum.watershed_labels_cn', {zIndex: 997} ),
-    dams_grid: L.mapbox.gridLayer('chinaenvforum.china_watershed_dams')
+    dams_grid: L.mapbox.gridLayer('chinaenvforum.china_watershed_dams_cn')
 };
+englishLayers.dams_gridControl = L.mapbox.gridControl(englishLayers.dams_grid);
 chineseLayers.dams_gridControl = L.mapbox.gridControl(chineseLayers.dams_grid);
 
 
+// add dams layer
+map.addLayer(L.mapbox.tileLayer('chinaenvforum.h4g98a18', {zIndex: 999} ));
 
-map.addLayer(englishLayers.dams);
-map.addLayer(L.mapbox.tileLayer('chinaenvforum.china_watershed_dams_minor', {zIndex: 998} ));
+// add english labels layer
 map.addLayer(englishLayers.labels);
 
+// add english tooltip grid layer and control
 map.addLayer(englishLayers.dams_grid);
-
 map.addControl(englishLayers.dams_gridControl);
-map.addControl(chineseLayers.dams_gridControl);
 
 
 // Add custom legend
@@ -82,14 +51,15 @@ function addCheckboxButton(mapId, elementClass) {
     $('.' + elementClass).on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log("clicked " + $(this));
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
             $(this).removeClass('active');
+            $('.map-legend .shadow').show();
         } else {
             map.addLayer(layer, {zIndex: 997} );
             $(this).addClass('active');
+            $('.map-legend .shadow').hide();
         }
     });
 }
@@ -119,20 +89,28 @@ $('.lang-change').on('click', 'a', function(e) {
         currentLanguage = 'en';
         console.log("view englishLayers");
 
+        $(this).addClass('active').siblings('.active').removeClass('active');
+
         map.removeLayer(chineseLayers.labels);
         map.removeLayer(chineseLayers.dams_grid);
+        map.removeControl(chineseLayers.dams_gridControl);
 
         map.addLayer(englishLayers.labels);
         map.addLayer(englishLayers.dams_grid);
+        map.addControl(englishLayers.dams_gridControl);
     }else if($(this).data('lang') == 'cn' && currentLanguage != 'cn'){
         currentLanguage = 'cn';
         console.log("view chineseLayers");
 
+        $(this).addClass('active').siblings('.active').removeClass('active');
+
         map.removeLayer(englishLayers.labels);
         map.removeLayer(englishLayers.dams_grid);
+        map.removeControl(englishLayers.dams_gridControl);
 
         map.addLayer(chineseLayers.labels);
         map.addLayer(chineseLayers.dams_grid);
+        map.addControl(chineseLayers.dams_gridControl);
     }else{
         console.log("nope");
     }
