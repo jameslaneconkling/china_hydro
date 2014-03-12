@@ -95,6 +95,9 @@ $('.lang-change').on('click', 'a', function(e) {
         map.removeLayer(chineseLayers.dams_grid);
         map.removeControl(chineseLayers.dams_gridControl);
 
+        $('.cn-text').hide();
+        $('.en-text').show();
+
         map.addLayer(englishLayers.labels);
         map.addLayer(englishLayers.dams_grid);
         map.addControl(englishLayers.dams_gridControl);
@@ -107,6 +110,9 @@ $('.lang-change').on('click', 'a', function(e) {
         map.removeLayer(englishLayers.labels);
         map.removeLayer(englishLayers.dams_grid);
         map.removeControl(englishLayers.dams_gridControl);
+
+        $('.en-text').hide();
+        $('.cn-text').show();
 
         map.addLayer(chineseLayers.labels);
         map.addLayer(chineseLayers.dams_grid);

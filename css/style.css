@@ -28,7 +28,7 @@
     color: #FFF8E7;
 }
 
-#text {
+.text {
     overflow:auto;
     padding: 16px 20px 16px 18px;
     font-size: 10pt;
@@ -43,24 +43,25 @@
     bottom: 0;
 }
 
-#text .navigate {
+.text .navigate {
     cursor: pointer;
     font-weight: bold;
     color: #ffa500;
 }
 
-#text .navigate:hover {
+.text .navigate:hover {
     color: #EECD8E;
 }
 
-#source {
+.source {
     font-size: 0.9em;
     line-height: 1.6em;
     border-top: 1px solid #555;
     font-style: italic;
+    padding-top: 8px;
 }
 
-#source ul {
+.source ul {
     margin-left: 8px;
 }
 
@@ -330,7 +331,7 @@
     font-weight: bold;
     cursor: pointer;
 }
-
+.toggle-layer.active,
 .toggle-layer:hover {
     background-color: rgb(53, 46, 25);
     background-color: rgba(119, 103, 79, 0.2);
