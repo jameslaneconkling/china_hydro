@@ -1,355 +1,3 @@
-#map {
-    position:absolute;
-    top:0;
-    bottom:0;
-    width:100%;
-/*    z-index: -1;*/
-}
-
-#content {
-    background:rgb(36,36,36);
-    background:rgba(36,36,36,0.9);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 400px;
-    border-right: 4px solid #cbc4b3;
-    color: #efedea;
-    z-index: 2;
-    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
-}
-
-#header {
-    background:rgb(36,36,36);
-    padding: 6px 8px 12px;
-    border-bottom: 2px solid #cbc4b3;
-    text-align: center;
-    color: #FFF8E7;
-}
-
-.text {
-    overflow:auto;
-    padding: 16px 20px 16px 18px;
-    font-size: 10pt;
-    color: #FFF8E7;
-    z-index: 2;
-    /* doesn't work in IE, unfortunately*/
-/*    height: auto;
-    max-height: calc(100% - 112px);*/
-
-    position: absolute;
-    top: 90px;
-    bottom: 0;
-}
-
-.text .navigate {
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffa500;
-}
-
-.text .navigate:hover {
-    color: #EECD8E;
-}
-
-.source {
-    font-size: 0.9em;
-    line-height: 1.6em;
-    border-top: 1px solid #555;
-    font-style: italic;
-    padding-top: 8px;
-}
-
-.source ul {
-    margin-left: 8px;
-}
-
-
-.menu {
-    /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; */
-    position:absolute;
-    margin-top: 10px;
-    margin-left: 10px;
-    top:180px;
-    left: 412px;
-}
-
-.menu a {
-    font-weight: bold;
-    float: left;
-    padding: 11px 0 11px 0;
-    border: 1px solid #BBB;
-    border-right-width: 0;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    background: #fff;
-    width: 106px;
-}
-
-.menu a:last-child {
-    border-bottom-width: 1px;
-    -webkit-border-radius: 0 0 2px 2px;
-    border-radius: 0 0 2px 2px;
-}
-
-.menu a:first-child {
-    -webkit-border-radius: 2px 2px 0 0;
-    border-radius: 2px 2px 0 0;
-}
-
-.menu a:hover {
-    color: #000;
-    background: #efedea;
-}
-
-.menu a.active {
-    color: orange;
-}
-
-.menu a:active {
-    color: orange;
-    background: #fff;
-}
-
-
-
-/******************************* Tooltips *******************************/
-
-.map-tooltip {
-    border:none;
-    background:none;
-    border-radius:none;
-    -moz-border-radius:none;
-    -webkit-border-radius:none;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-    top: 0;
-    right: 0;
-    border: none;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: rgba(36,36,36,0.9);
-    line-height: 16px;
-    max-width: 320px !important;
-    width: 320px;
-    }
-
-.map-tooltip .title {
-    padding-bottom: 4px;
-    border-bottom: 2px solid #cbc4b3;
-    margin: 0;
-    color: #FFF8E7;
-}
-
-.map-tooltip .head1 {
-    font-weight: bold;
-    font-size: 17pt;
-    padding: 4px 0 0 4px;
-}
-
-.map-tooltip .head2 {
-    font-weight: normal;
-    font-size: 11pt;
-    padding: 4px 0 0 4px;
-}
-
-.map-tooltip .details {
-    padding: 4px 0 4px 4px;
-    font-weight: 600;
-    color: #FFF8E7;
-    font-size: 11pt;
-}
-
-.map-tooltip .col {
-    float: left;
-}
-
-.map-tooltip .installed-cap {
-    color: #ff8b00;
-    font-weight: 800;
-    padding-left: 6px;
-}
-
-.map-tooltip .status {
-    font-weight: 400;
-    padding-left: 6px;
-}
-
-/******************************* Legends *******************************/
-.map-legends {
-    border: 0;
-    background-color: rgba(36,36,36,0.9);
-    width: 200px !important;
-}
-
-.map-legend {
-    font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #FFF8E7;
-}
-
-
-.map-legend .legend-scale ul {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 5px;
-    padding: 0;
-    float: left;
-    list-style: none;
-}
-
-.map-legend .legend-scale ul li {
-    list-style: none;
-    margin-left: 0;
-    border-bottom: 1px solid #555;
-    height: 30px;
-}
-
-.map-legend .legend-scale ul li:last-child {
-    border-bottom-width: 2px;
-    margin-bottom: 4px;
-}
-
-.map-legend .legend-scale ul:last-child li:last-child {
-    border-bottom: 0;
-    margin-bottom: 2px;
-}
-
-.map-legend .legend-scale img {
-    height: 28px;
-    width: 28px;
-    padding: 2px;
-}
-
-.map-legend .legend-scale img.mini {
-    height: 20px;
-}
-
-.map-legend .legend-scale img.icon-fill {
-    padding: 0;
-    border: 1px solid #777;
-    margin: 0 2px;
-    height: 26px;
-    width: 26px;
-}
-
-.map-legend .shadow {
-    position: absolute;
-    top: -9px;
-    bottom: -5px;
-    left: -10px;
-    right: -10px;
-    background-color: rgba(48, 48, 48, 0.7);
-    border-radius: 0 0 3px 3px;
-}
-
-/******************************* Zoom Widget *******************************/
-.leaflet-top {
-    left: 412px;
-}
-
-.leaflet-top .leaflet-control {
-  box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
-}
-
-/******************************* Language Widget *******************************/
-.widget-ui {
-    position: absolute;
-    left: 460px;
-    /*right: 8px;*/
-    margin-left: 10px;
-    margin-top: 10px;
-    background-color: white;
-    border: 1px solid #999;
-    border-radius: 3px;
-    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
-}
-
-.widget-ui a {
-    width: 26px;
-    height: 26px;
-    border-bottom: 1px solid #DDD;
-    display: block;
-    color: #404040;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    /*padding: 2px 0;*/
-}
-
-.widget-ui.horizontal a {
-    float: left;
-    border-bottom: none;
-    border-right: 1px solid #DDD;
-}
-
-.widget-ui a:hover {
-    background-color: white;
-    color: #404040;
-}
-
-.widget-ui a:active {
-    color: orange;
-}
-
-.widget-ui a.active {
-    background-color: #F0F0F0;
-    color: orange;
-    /*box-shadow: inset 0px 2px 3px rgba(0,0,0,0.15);*/
-}
-
-.widget-ui a:first-child {
-    border-radius: 3px 3px 0 0;
-}
-
-.widget-ui a:last-child {
-    border-radius: 0 0 3px 3px;
-    border-bottom: none;
-}
-
-.widget-ui.horizontal a:first-child {
-    border-radius: 3px 0 0 3px
-}
-
-.widget-ui.horizontal a:last-child {
-    border-radius: 0 3px 3px 0;
-    border-right: none;
-}
-
-
-/*************************** layer toggle button ***************************/
-.toggle-layer {
-    display: inline-block;
-    color: rgb(255, 185, 56);
-/*    background-color: rgb(43, 40, 37);
-    background-color: rgba(255,255,255,0.1);*/
-    border: 1px dashed rgb(172, 123, 18);
-    border: 1px dashed rgba(238, 164, 32, 0.6);
-    padding: 0 3px;
-    line-height: 1.5em;
-    font-weight: bold;
-    cursor: pointer;
-}
-.toggle-layer.active,
-.toggle-layer:hover {
-    background-color: rgb(53, 46, 25);
-    background-color: rgba(119, 103, 79, 0.2);
-}
-
-.toggle-layer:active {
-    /*color: rgb(255, 222, 161);*/
-    border: 1px dashed rgb(255, 222, 161);
-    background-color: transparent;
-}
-
-
-
-/*************************** misc ***************************/
-.mapbox-control-info {
-    display: none !important;
-}
-
 /* Base.css, developed by MapBox https://www.mapbox.com/base/latest/base.css */
 /* ************************************************************************* */
 /*
@@ -2587,4 +2235,364 @@ p strong {
     font-weight: bold;
 }
 
+ul {
+    margin-bottom: 20px;
+}
 
+
+
+#map {
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100%;
+/*    z-index: -1;*/
+}
+
+#content {
+    background:rgb(36,36,36);
+    background:rgba(36,36,36,0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    border-right: 4px solid #cbc4b3;
+    color: #efedea;
+    z-index: 2;
+    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+}
+
+#header {
+    background:rgb(36,36,36);
+    padding: 6px 8px 12px;
+    border-bottom: 2px solid #cbc4b3;
+    text-align: center;
+    color: #FFF8E7;
+}
+
+.text {
+    overflow:auto;
+    padding: 16px 20px 16px 18px;
+    font-size: 10pt;
+    color: #FFF8E7;
+    z-index: 2;
+    /* doesn't work in IE, unfortunately*/
+/*    height: auto;
+    max-height: calc(100% - 112px);*/
+
+    position: absolute;
+    top: 90px;
+    bottom: 0;
+}
+
+.text.cn-text {
+    top: 60px;
+}
+
+.text .navigate {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffa500;
+}
+
+.text .navigate:hover {
+    color: #EECD8E;
+}
+
+.source {
+    font-size: 0.9em;
+    line-height: 1.6em;
+    border-top: 1px solid #555;
+    font-style: italic;
+    padding-top: 8px;
+}
+
+.source ul {
+    margin-left: 8px;
+}
+
+
+.menu {
+    /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    position:absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    top:180px;
+    left: 412px;
+}
+
+.menu a {
+    font-weight: bold;
+    float: left;
+    padding: 11px 0 11px 0;
+    border: 1px solid #BBB;
+    border-right-width: 0;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background: #fff;
+    width: 106px;
+}
+
+.menu a:last-child {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+}
+
+.menu a:first-child {
+    -webkit-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+}
+
+.menu a:hover {
+    color: #000;
+    background: #efedea;
+}
+
+.menu a.active {
+    color: orange;
+}
+
+.menu a:active {
+    color: orange;
+    background: #fff;
+}
+
+
+
+/******************************* Tooltips *******************************/
+
+.map-tooltip {
+    border:none;
+    background:none;
+    border-radius:none;
+    -moz-border-radius:none;
+    -webkit-border-radius:none;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    top: 0;
+    right: 0;
+    border: none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgba(36,36,36,0.9);
+    line-height: 16px;
+    max-width: 320px !important;
+    width: 320px;
+    }
+
+.map-tooltip .title {
+    padding-bottom: 4px;
+    border-bottom: 2px solid #cbc4b3;
+    margin: 0;
+    color: #FFF8E7;
+}
+
+.map-tooltip .head1 {
+    font-weight: bold;
+    font-size: 17pt;
+    padding: 4px 0 0 4px;
+}
+
+.map-tooltip .head2 {
+    font-weight: normal;
+    font-size: 11pt;
+    padding: 4px 0 0 4px;
+}
+
+.map-tooltip .details {
+    padding: 4px 0 4px 4px;
+    font-weight: 600;
+    color: #FFF8E7;
+    font-size: 11pt;
+}
+
+.map-tooltip .col {
+    float: left;
+}
+
+.map-tooltip .installed-cap {
+    color: #ff8b00;
+    font-weight: 800;
+    padding-left: 6px;
+}
+
+.map-tooltip .status {
+    font-weight: 400;
+    padding-left: 6px;
+}
+
+/******************************* Legends *******************************/
+.map-legends {
+    border: 0;
+    background-color: rgba(36,36,36,0.9);
+    width: 200px !important;
+}
+
+.map-legend {
+    font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #FFF8E7;
+}
+
+
+.map-legend .legend-scale ul {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+}
+
+.map-legend .legend-scale ul li {
+    list-style: none;
+    margin-left: 0;
+    border-bottom: 1px solid #555;
+    height: 30px;
+}
+
+.map-legend .legend-scale ul li:last-child {
+    border-bottom-width: 2px;
+    margin-bottom: 4px;
+}
+
+.map-legend .legend-scale ul:last-child li:last-child {
+    border-bottom: 0;
+    margin-bottom: 2px;
+}
+
+.map-legend .legend-scale img {
+    height: 28px;
+    width: 28px;
+    padding: 2px;
+}
+
+.map-legend .legend-scale img.mini {
+    height: 20px;
+}
+
+.map-legend .legend-scale img.icon-fill {
+    padding: 0;
+    border: 1px solid #777;
+    margin: 0 2px;
+    height: 26px;
+    width: 26px;
+}
+
+.map-legend .shadow {
+    position: absolute;
+    top: -9px;
+    bottom: -5px;
+    left: -10px;
+    right: -10px;
+    background-color: rgba(48, 48, 48, 0.7);
+    border-radius: 0 0 3px 3px;
+}
+
+/******************************* Zoom Widget *******************************/
+.leaflet-top {
+    left: 412px;
+}
+
+.leaflet-top .leaflet-control {
+  box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+}
+
+/******************************* Language Widget *******************************/
+.widget-ui {
+    position: absolute;
+    left: 460px;
+    /*right: 8px;*/
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #999;
+    border-radius: 3px;
+    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+}
+
+.widget-ui a {
+    width: 26px;
+    height: 26px;
+    border-bottom: 1px solid #DDD;
+    display: block;
+    color: #404040;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    /*padding: 2px 0;*/
+}
+
+.widget-ui.horizontal a {
+    float: left;
+    border-bottom: none;
+    border-right: 1px solid #DDD;
+}
+
+.widget-ui a:hover {
+    background-color: white;
+    color: #404040;
+}
+
+.widget-ui a:active {
+    color: orange;
+}
+
+.widget-ui a.active {
+    background-color: #F0F0F0;
+    color: orange;
+    /*box-shadow: inset 0px 2px 3px rgba(0,0,0,0.15);*/
+}
+
+.widget-ui a:first-child {
+    border-radius: 3px 3px 0 0;
+}
+
+.widget-ui a:last-child {
+    border-radius: 0 0 3px 3px;
+    border-bottom: none;
+}
+
+.widget-ui.horizontal a:first-child {
+    border-radius: 3px 0 0 3px
+}
+
+.widget-ui.horizontal a:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: none;
+}
+
+
+/*************************** layer toggle button ***************************/
+.toggle-layer {
+    display: inline-block;
+    color: rgb(255, 185, 56);
+/*    background-color: rgb(43, 40, 37);
+    background-color: rgba(255,255,255,0.1);*/
+    border: 1px dashed rgb(172, 123, 18);
+    border: 1px dashed rgba(238, 164, 32, 0.6);
+    padding: 0 3px;
+    line-height: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.toggle-layer.active,
+.toggle-layer:hover {
+    background-color: rgb(53, 46, 25);
+    background-color: rgba(119, 103, 79, 0.2);
+}
+
+.toggle-layer:active {
+    /*color: rgb(255, 222, 161);*/
+    border: 1px dashed rgb(255, 222, 161);
+    background-color: transparent;
+}
+
+
+
+/*************************** misc ***************************/
+.mapbox-control-info {
+    display: none !important;
+}
