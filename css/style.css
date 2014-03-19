@@ -2493,7 +2493,7 @@ ul {
 
 /******************************* Zoom Widget *******************************/
 .leaflet-top.leaflet-left {
-    top: 54px;
+    top: 90px;
     left: 412px;
 }
 
@@ -2505,7 +2505,7 @@ ul {
 .widget-ui {
     position: absolute;
     left: 460px;
-    top: 54px;
+    top: 90px;
     margin-left: 10px;
     margin-top: 10px;
     background-color: white;
@@ -2601,5 +2601,5 @@ ul {
 .logo {
     position: absolute;
     left: 420px;
-    width: 110px;
+    width: 180px;
 }
