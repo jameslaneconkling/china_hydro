@@ -2215,7 +2215,6 @@ img.inline, .inline           { display:inline-block; }
 /********************************************************/
 /******************* Customizations *********************/
 body {
-    background-color: #242424;
     line-height: 1.7em;
 }
 
@@ -2246,6 +2245,7 @@ ul {
     top:0;
     bottom:0;
     width:100%;
+    background-color: #333;
 /*    z-index: -1;*/
 }
 
@@ -2492,7 +2492,8 @@ ul {
 }
 
 /******************************* Zoom Widget *******************************/
-.leaflet-top {
+.leaflet-top.leaflet-left {
+    top: 54px;
     left: 412px;
 }
 
@@ -2504,7 +2505,7 @@ ul {
 .widget-ui {
     position: absolute;
     left: 460px;
-    /*right: 8px;*/
+    top: 54px;
     margin-left: 10px;
     margin-top: 10px;
     background-color: white;
@@ -2595,4 +2596,10 @@ ul {
 /*************************** misc ***************************/
 .mapbox-control-info {
     display: none !important;
+}
+
+.logo {
+    position: absolute;
+    left: 420px;
+    width: 110px;
 }
